@@ -14,7 +14,7 @@ foreach (glob(__DIR__."/class/*.php") as $filename)
     include($filename);
 }
 
-include(__DIR__."/vendor/autoload.php");
+include(__DIR__."/../vendor/autoload.php");
 
 if (isset($_GET)){
     foreach ($_GET as $key_get => $value_get){
