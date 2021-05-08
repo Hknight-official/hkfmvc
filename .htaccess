@@ -1,0 +1,5 @@
+RewriteEngine on
+
+RedirectMatch 403 ^/include/?$
+RedirectMatch 403 ^/system/?$
+RedirectMatch 403 ^/vendor/?$

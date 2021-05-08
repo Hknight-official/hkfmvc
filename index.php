@@ -5,8 +5,8 @@ include("./system/init.php");
 
     switch($widget){
         case "main":
-            include("header.php");
-            include("main.php");
-            include("footer.php");
+            include("./include/header.php");
+            include("./include/main.php");
+            include("./include/footer.php");
         break;    
     }
