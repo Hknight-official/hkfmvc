@@ -33,6 +33,13 @@ if (client() != false){
     }
 }
 
+// Bảo mật csrf
+if (!empty($_SESSION['csrf_key'])){
+    if (client_ip() != explode("|", $_SESSION['csrf_key'])[1]){
+        unset($_SESSION['csrf_key']); // hủy csrf key
+    }
+}
+
 // Lọc dữ liệu $request_ method get
 if (isset($_GET)){
     if (!(count($_POST) > 0)){
