@@ -1,6 +1,7 @@
 <?php
 /**
  * Lấy dữ liệu client
+ * @return array
  */
 function client($value = "", $type_conn = 0){
     global $_SESSION, $conn;
@@ -22,6 +23,7 @@ function client($value = "", $type_conn = 0){
 }
 /**
  * Lấy ipv4 client
+ * @return string
  */
 function client_ip()
 {

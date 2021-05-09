@@ -5,6 +5,13 @@
 	function csrf(){
 		return bin2hex(openssl_random_pseudo_bytes(32));
     }
+	/**
+	 * Xóa bỏ csrf hiện tại, chú ý: nên hủy ngay csrf sau ở cuối lệnh core
+	 */
+	function un_csrf(){
+		global $_SESSION;
+		unset($_SESSION['csrf_key']);
+	}
     /**
 	 * Kích hoạt request Json Post
 	 */
@@ -14,6 +21,7 @@
 	}
 	/**
 	 * Kiểm tra phần tử mảng có rỗng hay không
+	 * @return boolean
 	 */
 	function check_data_method($method, $array_key = [])
 	{
@@ -26,6 +34,7 @@
 	}
 	/**
 	 * Kiểm tra phần tử mảng có tồn tại hay không
+	 * @return boolean
 	 */
 	function exit_data_method($method, $array_key = [])
 	{
@@ -38,6 +47,7 @@
 	}
 	/**
 	 * hệ thống bảo vệ đầu ra anti sql injection và xss
+	 * @return array
 	 */
 	function method_core_data($data, $type_conn = 0)
 	{
