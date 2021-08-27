@@ -13,3 +13,4 @@ npm run dev
 vài npm package cần thiết:
 npm i vue-sweetalert2
 npm install laravel-vue-pagination
+npm i vue-chartjs
