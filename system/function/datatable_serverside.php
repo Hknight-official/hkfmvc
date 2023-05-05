@@ -1,10 +1,6 @@
 <?php
 function createDatatable ($table, $search_arr, $data_arr){
-    global $_POST;
-    $CMST = new CMSNT;
-    $CMST->connect_PDO();
-    $conn = $CMST->ketnoi;
-    
+    global $_POST, $conn;
 // Reading value
    $draw = $_POST['draw'];
    $row = $_POST['start'];
